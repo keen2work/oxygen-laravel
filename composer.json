@@ -56,39 +56,39 @@
     "repositories": [
 		{
 			"type": "vcs",
-			"url": "git@bitbucket.org:elegantmedia/devices-laravel.git"
+			"url": "https://github.com/keen2work/devices-laravel.git"
 		},
 		{
 			"type": "vcs",
-			"url": "git@bitbucket.org:elegantmedia/laravel-app-settings.git"
+			"url": "https://github.com/keen2work/laravel-app-settings.git"
 		},
 		{
 			"type": "vcs",
-			"url": "git@bitbucket.org:elegantmedia/devices-laravel.git"
+			"url": "https://github.com/keen2work/devices-laravel.git"
 		},
 		{
 			"type": "vcs",
-			"url": "git@bitbucket.org:elegantmedia/laravel-api-helpers.git"
+			"url": "https://github.com/keen2work/laravel-api-helpers.git"
 		},
 		{
 			"type": "vcs",
-			"url": "git@bitbucket.org:elegantmedia/laravel-media-manager.git"
+			"url": "https://github.com/keen2work/laravel-media-manager.git"
 		},
 		{
 			"type": "vcs",
-			"url": "git@bitbucket.org:elegantmedia/laravel-test-kit.git"
+			"url": "https://github.com/keen2work/laravel-test-kit.git"
 		},
         {
             "type":"vcs",
-            "url":"git@bitbucket.org:elegantmedia/lotus.git"
+            "url":"https://github.com/keen2work/lotus.git"
         },
         {
             "type": "vcs",
-            "url": "git@bitbucket.org:elegantmedia/formation.git"
+            "url": "https://github.com/keen2work/formation.git"
         },
 		{
 			"type": "vcs",
-			"url": "git@bitbucket.org:elegantmedia/multitenant-laravel.git"
+			"url": "https://github.com/keen2work/multitenant-laravel.git"
 		}
 	],
 	"config": {

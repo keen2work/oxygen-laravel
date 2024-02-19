@@ -1,0 +1,36 @@
+footer {
+    background: #2e3137;
+    box-shadow: inset rgba(255, 255, 255, 0.1) 0 4px 0;
+    padding: 30px 20px 20px;
+    color: #ccc;
+    font-size: small;
+
+    a {
+        color: #adadad;
+        text-decoration: none;
+    }
+
+    .headline {
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .text {
+
+    }
+
+    ul {
+        padding-left: 0px;
+        list-style: none;
+    }
+
+    .small-footer {
+        color: #ccc;
+
+        .links {
+            a {
+                text-transform: uppercase;
+            }
+        }
+    }
+}

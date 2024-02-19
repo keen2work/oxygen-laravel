@@ -1,0 +1,37 @@
+<?php
+
+namespace {{namespace}};
+
+use App\Http\Controllers\API\V1\APIBaseController;
+use App\Entities\{{entityGroup}}\{{entityGroup}}Repository;
+use App\Entities\{{entityGroup}}\{{entitySingular}};
+use EMedia\Api\Docs\APICall;
+use Illuminate\Http\Request;
+
+class {{ class }} extends APIBaseController
+{
+
+	protected $repo;
+
+	public function __construct({{entityGroup}}Repository $repo)
+	{
+		$this->repo = $repo;
+	}
+
+	protected function index(Request $request)
+	{
+		document(function () {
+                	return (new APICall())
+                	    ->setParams([
+                	        'q|Search query',
+                	        'page|Page number',
+                        ])
+                        ->setSuccessPaginatedObject({{entitySingular}}::class);
+                });
+
+		$items = $this->repo->search();
+
+		return response()->apiSuccess($items);
+	}
+
+}

@@ -1,0 +1,68 @@
+image: emediaorg/php:8.1-202303
+
+pipelines:
+  default:
+    - step:
+        name: PHPUnit Tests
+        caches:
+          - composer
+        script:
+          - COMPOSER=$(which composer)
+          # Image/GD Extension
+          - apt-get update && apt-get install -y libjpeg-dev libpng-dev
+          - docker-php-ext-configure gd --enable-gd --with-jpeg
+          - docker-php-ext-install gd
+          - sed -i 's/imagick/gd/g' config/image.php
+          # install packages
+          - composer install
+          - cp .env.example .env
+          - sed -i 's/MAIL_MAILER=smtp/MAIL_MAILER=log/g' .env
+          - sed -i 's/DB_USERNAME=root/DB_USERNAME=appuser/g' .env
+          - sed -i 's/DB_PASSWORD=/DB_PASSWORD=userpass/g' .env
+          - php artisan key:generate
+          - php artisan migrate --force
+          - php artisan db:seed --force
+          - php vendor/bin/phpunit
+          # Manually set screen for dusk
+          #- Xvfb -ac :0 -screen 0 1280x1024x16 &
+          # Switch to Production mode
+          # - sed -i 's/APP_ENV=local/APP_ENV=production/g' .env
+          # - php artisan dusk:chrome-driver 72
+          # - php artisan serve &
+          # - sleep 5
+          # - php artisan dusk
+        services:
+          - mysql
+          #- selenium
+definitions:
+  # networks: services within the same network can share resources
+  # this is how the `app` service can talk to `db` service
+  networks:
+    app-network:
+      driver: bridge
+  services:
+    mysql:
+      image: mysql:8.0
+      container_name: dbcontainer
+      environment:
+        MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+        MYSQL_DATABASE: 'laravel'
+        MYSQL_USER: 'appuser'
+        MYSQL_PASSWORD: 'userpass'
+      networks:
+        - app-network
+
+    # selenium (for dusk and testing)
+#    selenium:
+#      image: selenium/standalone-chrome:3.141.59
+#      container_name: selenium
+#      restart: unless-stopped
+#      shm_size: 2G
+#      volumes:
+#        - /dev/shm:/dev/shm
+#      ports:
+#        - "4444:4444"
+#      links:
+#        - app:localhost.test
+#      networks:
+#        - app-network

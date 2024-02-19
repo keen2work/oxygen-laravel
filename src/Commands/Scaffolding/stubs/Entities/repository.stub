@@ -1,0 +1,15 @@
+<?php
+
+namespace {{namespace}};
+
+use App\Entities\BaseRepository;
+
+class {{ class }} extends BaseRepository
+{
+
+	public function __construct({{entitySingular}} $model)
+	{
+		parent::__construct($model);
+	}
+
+}

@@ -1,0 +1,42 @@
+@import "../_brand-variables";
+
+/*
+ |-----------------------------------------------------------
+ | x-oxygen::data.card component
+ |-----------------------------------------------------------
+ */
+.data-view-header {
+	padding-bottom: 20px;
+}
+
+.data-view-header .title {
+	font-size: 1.6em;
+}
+
+.data-view-header .description {
+	color: #8f8f8f;
+}
+
+.data-view-group.row {
+	border-top: 1px solid #eaeaea;
+	padding: 20px 0;
+}
+
+.data-view-group.row:first-child {
+	border-top: none;
+}
+
+.data-view-group.row .col:first-child {
+	font-weight: 600;
+	color: #8f8f8f;
+}
+
+.card-style-data .card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.card-style-data .card-header .title {
+	font-weight: bold;
+}

@@ -1,0 +1,109 @@
+{
+    "name": "emedia/oxygen",
+    "description": "Foundation Laravel platform with a Dashboard and User handling.",
+    "type": "library",
+	"license": "proprietary",
+	"authors": [
+		{
+			"name": "Elegant Media",
+			"email": "info@elegantmedia.com.au"
+		}
+	],
+    "require": {
+        "php": "^8.1",
+        "elegantmedia/oxygen-foundation": "^3.0",
+        "elegantmedia/php-toolkit": "^1.0",
+        "emedia/api": "^6.0",
+        "emedia/app-settings": "^6.0",
+        "emedia/devices-laravel": "^5.0",
+        "emedia/formation": "^2.0",
+        "emedia/laravel-media-manager": "^5.0",
+        "emedia/multi-tenant": "^2.0",
+        "google/recaptcha": "^1.3",
+        "laravel/fortify": "^1.0",
+        "laravel/framework": "^10.0",
+		"laravel/sanctum": "^3.2",
+        "silber/bouncer": "^1.0.0",
+        "spatie/laravel-sluggable": "^3.4"
+    },
+    "require-dev": {
+        "doctrine/dbal": "^3.6",
+        "emedia/laravel-test-kit": "3.x-dev",
+        "mockery/mockery": "^1.5",
+        "orchestra/testbench": "^8.0",
+        "orchestra/testbench-browser-kit": "^8.0",
+        "phpunit/phpunit": "^10.0",
+        "squizlabs/php_codesniffer": "^3.7"
+    },
+	"autoload": {
+		"psr-4": {
+			"EMedia\\Oxygen\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"App\\": "vendor/orchestra/testbench-core/laravel/app",
+			"Tests\\": "tests/",
+			"Setup\\": "setup/"
+		},
+		"files": [
+			"vendor/mockery/mockery/library/helpers.php",
+			"vendor/elegantmedia/oxygen-foundation/tests/Traits/MocksScoutEngines.php"
+		]
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+    "repositories": [
+		{
+			"type": "vcs",
+			"url": "git@bitbucket.org:elegantmedia/devices-laravel.git"
+		},
+		{
+			"type": "vcs",
+			"url": "git@bitbucket.org:elegantmedia/laravel-app-settings.git"
+		},
+		{
+			"type": "vcs",
+			"url": "git@bitbucket.org:elegantmedia/devices-laravel.git"
+		},
+		{
+			"type": "vcs",
+			"url": "git@bitbucket.org:elegantmedia/laravel-api-helpers.git"
+		},
+		{
+			"type": "vcs",
+			"url": "git@bitbucket.org:elegantmedia/laravel-media-manager.git"
+		},
+		{
+			"type": "vcs",
+			"url": "git@bitbucket.org:elegantmedia/laravel-test-kit.git"
+		},
+        {
+            "type":"vcs",
+            "url":"git@bitbucket.org:elegantmedia/lotus.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@bitbucket.org:elegantmedia/formation.git"
+        },
+		{
+			"type": "vcs",
+			"url": "git@bitbucket.org:elegantmedia/multitenant-laravel.git"
+		}
+	],
+	"config": {
+		"sort-packages": true
+	},
+	"scripts": {
+		"test": "phpunit",
+		"check-style": "phpcs src tests",
+		"fix-style": "phpcbf src tests"
+	},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"EMedia\\Oxygen\\OxygenServiceProvider"
+			]
+		}
+	}
+}

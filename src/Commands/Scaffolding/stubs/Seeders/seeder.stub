@@ -1,0 +1,28 @@
+<?php
+
+namespace {{namespace}};
+
+use Illuminate\Database\Seeder;
+use Illuminate\Foundation\Testing\WithFaker;
+
+class {{ class }} extends Seeder
+{
+
+	use WithFaker;
+
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $faker = $this->makeFaker();
+
+        for ($i = 0; $i < 5; $i++) {
+			$entity = new \App\Entities\{{entityGroup}}\{{entitySingular}};
+			// $entity->name = $faker->name;
+			$entity->save();
+		}
+    }
+}

@@ -1,0 +1,47 @@
+.multi-select-wrapper .select2-container {
+	display: block;
+}
+.select2-container--default .select2-selection--multiple {
+	border: 1px solid #eaeaea;
+	min-height: 50px;     // allow auto-height
+}
+// selection pill
+.multi-select-wrapper .select2-container--default .select2-selection--multiple .select2-selection__choice {
+	background-color: #8ECE9F;
+	border: 1px solid #098602;
+	color: #fff;
+	padding: 8px 10px;
+	font-size: 14px;
+	display: inline-flex;
+}
+// close button
+.multi-select-wrapper .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+	color: #F1F1F1;
+	background: #000000ab;
+	font-weight: bold;
+	margin-right: 5px;
+	position: relative;
+	border-radius: 4px;
+}
+.multi-select-wrapper .error {
+	font-size: 16px;
+	background: #FFF1F1;
+	padding: 2px 11px;
+	border-radius: 5px;
+	border: 1px solid #FFCFCF;
+}
+
+#modalErrorMessage {
+	display: none;
+	margin-bottom: 0px;
+}
+
+#loadingIndicator {
+	display: none;
+}
+
+// Fix select2 dropdown hiding behind modals issue
+// https://github.com/select2/select2/issues/3388
+.select2-container--open {
+	z-index: 9999;
+}

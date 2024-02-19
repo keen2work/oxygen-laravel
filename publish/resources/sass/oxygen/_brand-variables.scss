@@ -1,0 +1,21 @@
+$main-color: radial-gradient(circle,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,0) 36.65%,rgba(0,0,0,.08) 100%),linear-gradient(45deg,#7f0ede,#0491f5);
+$secondary-color: #FFEB3B;
+
+$internal-border-color: #eaeaea;
+$box-border-shadow: 2px 2px 3px #ccc;
+
+$brand-font-color: #b9b9b9;
+$brand-font-color-second: #fff;
+$brand-font-color-third: #5f5b3c;
+$background-hover-color: #fdfdfd;
+
+$background-color-dark: #424242;
+$dark-font-color: #d2d2d2;
+
+$paragraph-font: 'Open Sans', sans-serif;
+$paragraph-font-size: 14px;
+
+$dashboard-font: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+$brand-primary-green: $brand-font-color;
+$internal-page-border: 1px solid $internal-border-color;
